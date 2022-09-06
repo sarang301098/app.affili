@@ -1,0 +1,21 @@
+.card-consultant {
+  text-align: center;
+
+  .consultant-name {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+  }
+
+  img {
+    border-radius: 500px;
+  }
+}
+
+.list-consultants .card-consultant {
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

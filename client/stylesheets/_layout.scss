@@ -1,0 +1,256 @@
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
+.app-container {
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: $brand-light;
+  .content{
+    padding: 25px 0px;
+  }
+}
+
+.tooltip {
+  $tooltip-bg: #fefefe;
+
+  .tooltip-inner {
+    background-color: $tooltip-bg;
+    color: #333;
+    box-shadow: 2px 3px 12px rgba(0,0,0,0.1);
+    font-weight: 400;
+    padding: 8px 14px;
+  }
+
+  &.show {
+    opacity: 0.975 !important;
+  }
+
+  &.bs-tooltip-right .arrow:before {
+    border-right-color: $tooltip-bg !important;
+  }
+  &.bs-tooltip-left .arrow:before {
+    border-left-color: $tooltip-bg !important;
+  }
+  &.bs-tooltip-top .arrow:before {
+    border-top-color: $tooltip-bg !important;
+  }
+  &.bs-tooltip-bottom .arrow:before {
+    border-bottom-color: $tooltip-bg !important;
+  }
+}
+
+.alert-secondary {
+  border-color: #ddd !important;
+}
+
+
+.app.night-mode {
+  background-color: #333;
+  color: #ddd;
+
+  .app-content {
+    background-color: #333;
+  }
+
+  .panel, .bg-white, .card {
+    background-color: #444;
+    color: #eee;
+  }
+
+  .table {
+    color: #eee;
+  }
+
+  .table td, .table th, .pricing-box .price-row {
+    border-top-color: #777;
+  }
+  .table thead th {
+    border-bottom-color: #777;
+  }
+
+  .page-link {
+    background-color: #444;
+    border-color: #333;
+    color: #eee;
+  }
+
+  .app-header {
+    background-color: #222;
+    border-bottom-color: #444;
+  }
+
+  .app-footer {
+    color: #777;
+  }
+
+  .app-sidebar {
+    background-color: #222;
+    border-right-color: #444;
+
+    .navbar-nav>li.active>a, .navbar-nav>li:hover>a {
+      background-color: #333;
+    }
+    .navbar-nav>li:hover>a {
+      color: #999;
+    }
+  }
+
+  .nav-tabs {
+    border-bottom-color: #444;
+  }
+
+  .app-content h2 {
+    color: #eee;
+  }
+
+  .form-control, .DateRangePicker .DateRangePickerInput, .DateRangePicker .DateInput_input {
+    background-color: #555;
+    border-color: #222;
+    color: #eee;
+  }
+
+  .input-group-text {
+    background-color: #666;
+    border-color: #222;
+  }
+
+  .btn-secondary, .list-group-item {
+    background-color: #444;
+    border-color: #444;
+    color: #eee;
+  }
+
+  .toggler {
+    color: #888;
+  }
+
+  .text-muted {
+    color: #999 !important;
+  }
+
+  .dashboard {
+    > .row > .col-md-4 {
+      background-color: #444;
+    }
+
+    .bg-white {
+      background-color: #444 !important;
+    }
+  }
+
+  .app-list-item-icon {
+    background-color: #555 !important;
+    border-color: #333 !important;
+  }
+
+  .alert-primary, .alert-info {
+    color: #eee;
+    background-color: #333;
+    border-color: #777;
+  }
+
+
+  .DateRangePicker_picker, .DayPicker__horizontal, .CalendarMonthGrid, .CalendarMonth {
+    background-color: #444;
+    color: #eee;
+  }
+  .CalendarMonth_caption {
+    color: #eee;
+  }
+  .DateInput_fangStroke{
+    stroke: #444;
+  }
+  .DateInput_fangShape {
+    fill: #444;
+  }
+  .DayPicker_weekHeader {
+    color: #aaa;
+  }
+  .DayPickerNavigation_button__default {
+    border: 1px solid #666;
+    background-color: #555;
+    color: #ddd;
+  }
+  .CalendarDay__default {
+    border: 1px solid #666;
+    color: #ddd;
+    background: #555;
+  }
+  .DateRangePicker .CalendarDay__selected_span {
+    background: lighten($primary, 10%);
+    border: 1px solid $primary;
+  }
+  .CalendarDay__default:hover {
+    background: #666;
+  }
+  .DateRangePicker .CalendarDay__selected_span:hover {
+    background: $primary;
+  }
+
+  .c3-tooltip, .c3-tooltip td {
+    background-color: #555;
+  }
+  .c3-tooltip th {
+    background-color: #666;
+  }
+
+  .apexcharts-tooltip.light {
+    background-color: #555;
+    border-color: #666;
+  }
+  .apexcharts-tooltip.light .apexcharts-tooltip-title {
+    border-bottom-color: #444;
+    background-color: #666;
+  }
+
+  .ck-toolbar {
+    background-color: #555;
+    border-color: #333;
+  }
+  .ck-button {
+    color: #eee;
+  }
+  .ck.ck-toolbar__separator {
+    background-color: #333;
+  }
+  .ck.ck-editor__main>.ck-editor__editable {
+    background-color: #555;
+    border-color: #333;
+  }
+
+  .rdtPicker {
+    background-color: #555;
+    border-color: #333;
+    color: #eee;
+
+    &:before {
+      border-bottom-color: #555;
+    }
+
+    tfoot {
+      border-top-color: #444;
+    }
+    th {
+      border-bottom-color: #444;
+    }
+  }
+
+  ::placeholder {
+    color: #ccc;
+  }
+
+  .CodeMirror {
+    background-color: #444;
+  }
+  .CodeMirror-line {
+    color: #eee;
+  }
+  .CodeMirror-gutters {
+    background-color: #555;
+    border-right-color: #555;
+  }
+}

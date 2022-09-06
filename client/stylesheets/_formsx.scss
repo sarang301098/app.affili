@@ -1,0 +1,89 @@
+.form-control,
+.custom-select {
+  font-size: 0.875rem;
+  &.form-control-lg,
+  &.custom-select-lg{
+    font-size: 1rem;
+  }
+  &, &:focus {
+    box-shadow: none;
+  }
+
+  &:focus {
+    border-color: $brand-primary;
+  }
+}
+
+.form-group {
+  // margin-bottom: 1.25rem;
+}
+
+.form-group-material{
+  position: relative;
+  background: #f4f6f9;
+  border-radius: 50px;
+  .control-label{
+    color: $muted;
+    position: absolute;
+    left: 0;
+    transform: translate(1.5rem, 18px);
+    margin: 0;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    z-index: 4;
+  }
+  .form-control,
+  .custom-select{
+    background-color: $light;
+    border-color: transparent;
+    border-radius: 50px;
+    height: calc(2.5em + 1rem + 2px);
+    padding: 1rem 1.5rem;
+  }
+  textarea.form-control{
+    height: auto;
+    border-radius: 8px;
+  }
+  .input-group-append{
+    align-items: center;
+    padding-right: .5rem;
+    >.btn{
+      border-radius: 50px;
+    }
+  }
+  .react-select-container{
+    .react-select__control{
+      min-height: 57px;
+      border-radius: 50px;
+      background-color: $light;
+      border-color: transparent !important;
+    }
+    .react-select__value-container{
+      padding: 2px 8px 2px 1.5rem;
+    }
+    .react-select__placeholder{
+      color: $muted;
+    }
+    .react-select__multi-value{
+      background-color: #787878;
+      border-radius: 50px;
+      color: #FFF;
+    }
+    .react-select__multi-value__label{
+      color: #FFF;
+    }
+    .react-select__multi-value__remove{
+      border-radius: 50px;
+    }
+  }
+  &.has-value{
+    .control-label{
+      font-size: .75rem;
+      transform: translate(1.5rem, 9px);
+    }
+    .form-control,
+    .custom-select{
+      padding: 1.25rem 1.5rem .5rem;
+    }
+  }
+}

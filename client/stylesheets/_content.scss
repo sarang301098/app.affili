@@ -1,0 +1,218 @@
+.app-content {
+  position: relative;
+  // padding: 30px 20px 60px;
+  padding: 0px 0px 50px;
+  width: 100%;
+  flex: 1 1 auto;
+
+  @media (min-width: 768px) {
+    // padding-left: 40px;
+    // padding-right: 30px;
+    // width: calc(100% - 220px);
+  }
+
+  .app-content-inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    > * {
+      width: 100%;
+    }
+  }
+
+  .nav-tabs {
+    .nav-item {
+      margin-right: 10px;
+    }
+
+    .nav-link {
+      border: none;
+      border-bottom: 3px solid transparent;
+      background-color: transparent;
+      font-weight: 600;
+      color: #777;
+
+      &.active {
+        color: $primary;
+        border-bottom-color: $primary;
+      }
+    }
+  }
+}
+
+.pricing-box {
+  h4 {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  h3 {
+    margin: 20px 0 30px;
+    color: #777;
+  }
+
+  .price-row {
+    border-top: 1px solid #eee;
+    padding: 15px 10px;
+  }
+}
+
+.updates {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.card {
+  box-shadow: 3px 6px 8px rgba(0,0,0,0.075);
+  border-radius: 8px;
+  border: none;
+}
+
+
+.yeah-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  transition: all 0.5s ease-in-out;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation-name: yeahAnimation;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+  padding-top: 20vh;
+
+  h3 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  h3, h4 {
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  & ~ * {
+    animation-name: yeahAnimationBlur;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  50%{
+    transform: translateY(-8%);
+  }
+  65%{
+    transform: translateY(4%);
+  }
+  80%{
+    transform: translateY(-4%);
+  }
+  95%{
+    transform: translateY(2%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+
+@keyframes yeahAnimation {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes yeahAnimationBlur {
+  0% {
+    filter: blur(0px);
+  }
+  10% {
+    filter: blur(2px);
+  }
+  90% {
+    filter: blur(2px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+$particles: 50;
+$width: 500;
+$height: 500;
+
+$box-shadow: ();
+$box-shadow2: ();
+@for $i from 0 through $particles {
+  $box-shadow: $box-shadow,
+  random($width)-$width / 2 + px
+  random($height)-$height / 1.2 + px
+  hsl(random(360), 100, 50);
+  $box-shadow2: $box-shadow2, 0 0 #fff
+}
+@mixin keyframes ($animationName) {
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+.pyro > .before, .pyro > .after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: $box-shadow2;
+  animation: 1.25s bang ease-out infinite backwards, 1.25s gravity ease-in infinite backwards;
+  animation-iteration-count: 1;
+}
+
+.pyro > .after {
+  animation-delay: (1.5s, 1.5s);
+  animation-duration: (1.5s, 1.5s);
+}
+
+@include keyframes(bang) {
+  to {
+    box-shadow: $box-shadow;
+  }
+}
+
+@include keyframes(gravity)  {
+  to {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+}
+.restricted-iframe {
+  height: calc(100vh - 132px);
+  width: 100%;
+  border: 0;
+}

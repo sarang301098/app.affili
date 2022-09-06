@@ -1,0 +1,17 @@
+// Category item
+.rfipcategory {
+	width: 100%;
+	margin: 0 0 8px;
+	position: relative;
+	select {
+
+	}
+	i {
+		position: absolute;
+		right: 2px;
+		top: 0;
+		font-size: 16px;
+		line-height: 32px;
+		z-index: -1;
+	}
+}

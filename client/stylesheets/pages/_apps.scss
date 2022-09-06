@@ -1,0 +1,61 @@
+.card-campaign {
+  margin-bottom: 25px;
+
+  .card-title {
+    margin-left: 15px;
+    margin-bottom: 0;
+    cursor: pointer;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    user-select: none;
+    position: relative;
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    :after {
+      font-family: "Font Awesome 5 Free";
+      content: "\f0fe";
+      font-size: 24px;
+      color: $primary;
+      position: absolute;
+      right: 15px;
+    }
+  }
+
+  &.open {
+    .card-title {
+      :after {
+        content: "\f146";
+      }
+    }
+  }
+}
+
+
+.stepper-container {
+  > div > div > div > div {
+    > a, > span {
+      line-height: 32px !important;
+    }
+  }
+}
+.night-mode {
+  .stepper-container {
+    > div > div > div {
+      > a, > div {
+        color: #aaa !important;
+        border-color: #666 !important;
+      }
+
+      > div:first-child {
+        > span {
+          color: #555 !important;
+        }
+      }
+    }
+  }
+}
+

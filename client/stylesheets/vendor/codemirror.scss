@@ -1,0 +1,27 @@
+.CodeMirror {
+  font-size: 12px;
+  border: none;
+  height: 290px !important;
+  min-height: 42px;
+
+  &.cm-s-monokai {
+    background: #f9f9f9 !important;
+    color: #555 !important;
+
+    .CodeMirror-cursor {
+      border-left-color: #555 !important;
+    }
+
+    .CodeMirror-gutters {
+      background: #eee;
+    }
+
+    .CodeMirror-selected {
+      background: #ddd;
+    }
+  }
+}
+
+.codemirror-autosize .CodeMirror {
+  height: auto !important;
+}

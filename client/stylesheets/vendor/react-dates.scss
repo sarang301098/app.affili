@@ -1,0 +1,72 @@
+@import '../variables';
+
+.DateRangePicker {
+  .DateRangePickerInput {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 4px 2px;
+  }
+
+  .DateInput {
+    background: transparent;
+    width: 100px;
+  }
+
+  .DateInput_input {
+    background: transparent;
+    padding: 0;
+    color: #555;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: none;
+    border-radius: 0;
+  }
+
+  .DateInput_input__focused {
+    border-bottom: none;
+    font-weight: bold;
+  }
+
+  .DateRangePickerInput_arrow {
+    vertical-align: initial;
+  }
+
+  .DateRangePickerInput_arrow_svg {
+    fill: #b6b9c5;
+  }
+
+  .CalendarDay__selected, .CalendarDay__selected:active, .CalendarDay__selected:hover {
+    background: $primary;
+    color: #fff;
+    border: 1px solid $primary;
+  }
+
+  .CalendarDay__selected_span {
+    background: lighten($primary, 20%);
+    border: 1px solid lighten($primary, 10%);
+    // color: darken($primary, 20%);
+    color: #fff;
+
+    &:active, &:hover {
+      background: $primary;
+      border: 1px solid $primary;
+    }
+  }
+
+  .CalendarDay__hovered_span, .CalendarDay__hovered_span:hover {
+    background: lighten($primary, 20%);
+    border: 1px solid lighten($primary, 10%);
+    color: darken($primary, 20%);
+  }
+
+  .DateInput_fang {
+    top: 25px !important;
+    left: 50%;
+    margin-left: -10px;
+  }
+
+  .DateRangePicker_picker {
+    top: 40px !important;
+  }
+}

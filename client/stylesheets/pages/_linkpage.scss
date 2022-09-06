@@ -1,0 +1,55 @@
+
+.elements {
+  font-size: 0;
+  margin-bottom: -25px;
+}
+
+.element-heading {
+  font-weight: bold;
+}
+
+.element {
+  background-color: #fff;
+  color: #bbb;
+  display: block;
+  vertical-align: bottom;
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  user-select: none;
+  box-shadow: 1px 2px 6px rgba(0,0,0,0.05);
+  margin-bottom: 25px;
+  text-decoration: none !important;
+
+  .element-heading {
+    color: #777;
+    font-weight: 600;
+    font-size: 16px;
+    min-height: 26px;
+    white-space: pre-wrap;
+  }
+
+  .fa {
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 20px;
+    text-align: center;
+    color: #999;
+    margin-top: 5px;
+  }
+
+  &:hover {
+    background-color: #f5f5f5;
+    border-color: $primary;
+
+    .fa {
+      color: $primary;
+    }
+  }
+
+  &:active {
+    border-color: $primary;
+  }
+}

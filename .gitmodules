@@ -1,0 +1,3 @@
+[submodule "packages/affilihero-lib"]
+	path = packages/affilihero-lib
+	url = git@github.com:tsmm-gmbh/affilihero-lib.git

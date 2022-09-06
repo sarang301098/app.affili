@@ -1,0 +1,25 @@
+.app-footer {
+  height: 50px;
+  line-height: 50px;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  font-size: 12px;
+  text-align: right;
+
+  ul {
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+  }
+}
+
+.zEWidget-launcher {
+  @media (min-width: 768px) {
+    margin-left: 48px !important;
+    margin-right: 48px !important;
+  }
+  min-width: 141px !important;
+}

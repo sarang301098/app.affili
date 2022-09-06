@@ -1,0 +1,38 @@
+sudo: required
+# use old trusty image (https://blog.travis-ci.com/2017-12-12-new-trusty-images-q4-launch)
+dist: trusty
+group: deprecated-2017Q4
+
+language: bash
+
+env:
+  DOCKER_DRIVER: 'overlay'
+  GIT_SUBMODULE_STRATEGY: 'recursive'
+  METEOR_DEBUG_BUILD: '1'
+  IMAGE_MASTER: '235902489535.dkr.ecr.eu-central-1.amazonaws.com/affilihero/affilihero-app:latest'
+  IMAGE_STAGE: '235902489535.dkr.ecr.eu-central-1.amazonaws.com/affilihero/affilihero-app:stage'
+  AWS_ACCESS_KEY_ID: AKIATN3HCKO72YVIK32D
+  AWS_SECRET_ACCESS_KEY: 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
+  AWS_REGION: 'eu-central-1'
+  AWS_BUCKET: 'static.affilihero.io'
+  REGISTRY_URL: 'https://235902489535.dkr.ecr.eu-central-1.amazonaws.com'
+
+stages:
+ - build
+
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: build-master
+      if: branch = master
+      script:
+      # ping stdout every 9 minutes or Travis kills build
+      # https://docs.travis-ci.com/user/common-build-problems/#Build-times-out-because-no-output-was-received
+      - while sleep 9m; do echo "=====[ $SECONDS seconds still running ]====="; done &
+      - pip install --user awscli
+      - eval $(aws ecr get-login --no-include-email --region $AWS_REGION)
+      - docker pull $IMAGE_MASTER
+      - docker build -t $IMAGE_MASTER --cache-from $IMAGE_MASTER .
+      - docker push $IMAGE_MASTER

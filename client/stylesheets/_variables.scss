@@ -1,0 +1,92 @@
+/*
+Template Name: Admin Pro Admin
+Author: Wrappixel
+Email: niravjoshi87@gmail.com
+File: scss
+*/
+
+// Variables
+$bodyfont: 'Source Sans Pro', sans-serif;
+$headingfont: 'Source Sans Pro', sans-serif;
+
+$font-family-sans-serif: $bodyfont;
+
+$btn-border-radius: 8px;
+$btn-border-radius-lg: 8px;
+$btn-border-radius-sm: 6px;
+
+/*Theme Colors*/
+
+$topbar: #1976d2;
+$sidebar: #fff;
+$sidebar-white: #e5edef;
+$sidebar-alt:#edf0f5;
+$bodycolor: #f4f6f9;
+$headingtext: #455a64;
+$bodytext: #67757c;
+$sidebar-text: #687384;
+$sidebar-icons: #555f6d;
+$light-text: #a6b7bf;
+
+/*bootstrap Color*/
+
+$danger: #ef5350;
+$success: #5ec152;
+$warning: #ffb22b;
+$primary: #f12732; // #74bc37;
+$primary-light: rgba(244, 87, 95, 0.10);
+$primary-dark: darken($primary, 10%);
+$info: #398bf7;
+$inverse: #2f3d4a;
+$secondary: #dde1e4; // #868e96;
+$muted: #999; //#b6b9c5;
+$dark: #3A3F51; // #686e84;
+$extra-dark: #313544;
+$light: #f5f4f7;
+$extra-light: #ebf3f5;
+$bglight:rgba(0, 0, 0, 0.02);
+
+$themecolor: $primary;
+$themecolor-alt: #26c6da;
+$themecolor-dark: #028ee1;
+
+$topbar: #3a3f51;
+$sidebar: $extra-dark;
+$sidebar-text: #b3bfce;
+$sidebar-icons: #a9b4c3;
+$sidebar-dark: #1c2128;
+$sidebar-alt: #1c2128;
+$primary-alt: #26c6da;
+$topbar-alt: $topbar;
+$white: #fff;
+
+$brand-primary: $primary;
+$brand-danger: $danger;
+$brand-success: $success;
+$brand-warning: $warning;
+$brand-info: $info;
+$brand-dark: $dark;
+$brand-light: $light;
+
+$white: #ffffff;
+$red: #fb3a3a;
+$yellow: #a0aec4;
+$purple: #7460ee;
+$blue: #02bec9;
+$megna: #56c0d8;
+
+$rgt: right;
+$lft: left;
+$border: rgba(120, 130, 140, 0.13);
+$table-border: #e5e8ec;
+$card-brd:#d7dfe3;
+$dark-text: #848a96;
+$radius: 4px;
+$form-brd: #b1b8bb;
+
+
+$modal-transition: transform .2s ease-in-out;
+
+
+$sidebar-bg: #fff;
+$sidebar-active-bg: #eee;

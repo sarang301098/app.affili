@@ -1,0 +1,60 @@
+sudo: required
+
+language: bash
+
+env:
+  GIT_SUBMODULE_STRATEGY: 'recursive'
+  AWS_ACCESS_KEY_ID: 'AKIAI4HFSCUKWLBLLF7Q'
+  AWS_SECRET_ACCESS_KEY: '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'
+  AWS_REGION: 'eu-central-1'
+  DOCKER_IMAGE: '235902489535.dkr.ecr.eu-central-1.amazonaws.com/affilihero/affilihero-app'
+  REGISTRY_URL: 'https://235902489535.dkr.ecr.eu-central-1.amazonaws.com'
+  RANCHER_SERVER_URL: 'https://rancher.tsmm.business'
+  RANCHER_ACCESS_KEY: 'token-fqwpj'
+  RANCHER_SECRET_KEY: '29qh242jc5kxx9n7jxxrj52cx9zrdswxx8r9khxhs9ndgztcbk2zq9'
+  RANCHER_PROJECT_STAGE: ''
+  RANCHER_PROJECT_PROD: 'c-h9778:p-svmfm'
+  RANCHER_SERVICE: 'app'
+
+stages:
+ - build
+
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: build-stage
+      if: branch = stage
+      script:
+      - while sleep 9m; do echo "=====[ $SECONDS seconds still running ]====="; done &
+      - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip -qq "awscliv2.zip" && sudo ./aws/install && rm -rf ./aws
+      - echo $(aws ecr get-login-password --region eu-central-1) | docker login --password-stdin --username AWS $(aws sts get-caller-identity --query 'Account' --output text).dkr.ecr.eu-central-1.amazonaws.com
+      - docker pull $DOCKER_IMAGE:$TRAVIS_BRANCH
+      - docker build -t $DOCKER_IMAGE:$TRAVIS_BRANCH -t $DOCKER_IMAGE:$TRAVIS_BRANCH-$TRAVIS_COMMIT --cache-from $DOCKER_IMAGE:$TRAVIS_BRANCH .
+      - docker push $DOCKER_IMAGE
+    - stage: deploy-stage
+      if: branch = stage
+      script:
+      - wget -c "https://github.com/rancher/cli/releases/download/v2.4.11/rancher-linux-amd64-v2.4.11.tar.gz" -O - | tar -xz && sudo mv ./rancher-v2.4.11/rancher /usr/local/bin/rancher && sudo chmod +x /usr/local/bin/rancher && rm -rf ./rancher-v2.4.11
+      - curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/v1.12.3/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+      - rancher login $RANCHER_SERVER_URL -t $RANCHER_ACCESS_KEY:$RANCHER_SECRET_KEY --context $RANCHER_PROJECT_STAGE
+      - rancher kubectl set image deployment/$RANCHER_SERVICE $RANCHER_SERVICE=$DOCKER_IMAGE:$TRAVIS_BRANCH-$TRAVIS_COMMIT -n default
+      - rancher kubectl rollout status deployment/$RANCHER_SERVICE -n default
+    - stage: build-master
+      if: branch = master
+      script:
+      - while sleep 9m; do echo "=====[ $SECONDS seconds still running ]====="; done &
+      - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip -qq "awscliv2.zip" && sudo ./aws/install && rm -rf ./aws
+      - echo $(aws ecr get-login-password --region eu-central-1) | docker login --password-stdin --username AWS $(aws sts get-caller-identity --query 'Account' --output text).dkr.ecr.eu-central-1.amazonaws.com
+      - docker pull $DOCKER_IMAGE:$TRAVIS_BRANCH
+      - docker build -t $DOCKER_IMAGE:$TRAVIS_BRANCH -t $DOCKER_IMAGE:$TRAVIS_BRANCH-$TRAVIS_COMMIT --cache-from $DOCKER_IMAGE:$TRAVIS_BRANCH .
+      - docker push $DOCKER_IMAGE
+    - stage: deploy-master
+      if: branch = master
+      script:
+      - wget -c "https://github.com/rancher/cli/releases/download/v2.4.11/rancher-linux-amd64-v2.4.11.tar.gz" -O - | tar -xz && sudo mv ./rancher-v2.4.11/rancher /usr/local/bin/rancher && sudo chmod +x /usr/local/bin/rancher && rm -rf ./rancher-v2.4.11
+      - curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/v1.12.3/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+      - rancher login $RANCHER_SERVER_URL -t $RANCHER_ACCESS_KEY:$RANCHER_SECRET_KEY --context $RANCHER_PROJECT_PROD
+      - rancher kubectl set image deployment/$RANCHER_SERVICE $RANCHER_SERVICE=$DOCKER_IMAGE:$TRAVIS_BRANCH-$TRAVIS_COMMIT -n default
+      - rancher kubectl rollout status deployment/$RANCHER_SERVICE -n default

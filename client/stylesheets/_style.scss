@@ -1,0 +1,585 @@
+/* ********************************************************************************************
+    Reset
+*********************************************************************************************** */
+img {
+  max-width: 100%;
+}
+.font-size-12 {
+  font-size: 12px;
+}
+.font-weight-600 {
+  font-weight: 600;
+}
+.h-35 {
+  height: 35px !important;
+}
+.w-60 {
+  width: 60px !important;
+}
+.w-120 {
+  width: 120px !important;
+}
+.w-90p {
+  width: 90% !important;
+}
+.w-100p {
+  width: 100% !important;
+}
+.w-450 {
+  width: 450px !important;
+}
+a:hover, button:hover {
+  text-decoration: none !important;
+}
+.badge {
+  padding: .50em .7em;
+  border-radius: 4px;
+}
+.cursor-pointer {
+  cursor: pointer !important;
+}
+.container-fluid {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ********************************************************************************************
+    Button
+*********************************************************************************************** */
+
+.btn {
+  font-weight: 600 !important;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  &.btn-lg{
+    font-size: 1rem;
+  }
+}
+
+.btn.focus, .btn:focus {
+  box-shadow: none !important;
+}
+
+.form-action .btn {
+  border-radius: 100px;
+  min-width: 150px;
+} 
+
+.btn-outline-primary {
+  background-color: #ffffff;
+}
+
+.btn-outline-secondary {
+  color: #212529;
+  background-color: #ffffff;
+  border-color: #dde1e4;
+}
+.btn-outline-success:not(:disabled):not(.disabled).active, .btn-outline-success:not(:disabled):not(.disabled):active, .show>.btn-outline-success.dropdown-toggle, .btn-outline-success:hover {
+  color: #ffffff !important;
+}
+
+/* ********************************************************************************************
+    Header
+*********************************************************************************************** */
+
+.list-group-entities{
+  .card-header{
+    padding: 10px 10px 10px 15px;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 500;
+    background: transparent;
+    color: #a6a6a6;
+    border: none;
+    border-radius: 0;
+    margin-bottom: -20px;
+    display: flex;
+    cursor: pointer;
+    letter-spacing: 2px;
+  }
+  .table {
+    border-spacing: 0 20px!important;
+    border-collapse: separate;
+    tbody tr{
+      transition: background-color .2s ease-in-out;
+      background-color: #fff;
+      cursor: pointer;
+      td{
+        padding: 1.75rem 1.5rem;
+      border: 0 solid #eee;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4p
+      }
+      &:hover{
+        background-color: #fafafa;
+      }
+    }
+  }
+}
+
+.page-header{
+  padding-bottom: 20px;
+}
+
+/* ********************************************************************************************
+    Tabs
+*********************************************************************************************** */
+.app-content .nav-tabs.settings-tabs {
+  .nav-item {
+    margin-right: 0px;
+  }
+  .nav-link {
+    padding: 0.875em 1.5rem;
+  }
+}
+.product-settings-tabs .nav-item .nav-link {
+  color: #212529;
+  &.active {
+    color: #fff;
+  }
+}
+
+/* ********************************************************************************************
+    Page Changes
+*********************************************************************************************** */
+
+.section-padding {
+  padding: 60px 0px;
+}
+.product-title {
+  font-size: 26px;
+  color: #212121;
+  display: block;
+  font-weight: 600;
+  line-height: normal;
+}
+.product-description {
+  font-size: 22px;
+  line-height: normal;
+  color: #999;
+  display: block;
+}
+.product-title:focus, 
+.product-description:focus {
+    outline:  none !important;
+}
+.product-box .product-description {
+  font-size: 20px;
+}
+.product-box img {
+  max-height: 300px;
+}
+.templates__title {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.headline__image {
+  margin-bottom: 40px;
+}
+.headline__title {
+  font-size: 36px;
+  line-height: 42px;
+  text-transform: uppercase;
+  font-family: "GothamPro-Bold";
+}
+.headline__note {
+  margin-top: 10px;
+}
+.form-horizontal .form-group .control-label {
+  margin-top: 6px;
+}
+.product-images {
+  .input-group-append {
+    margin-right: 45px;
+  }
+  .product-images-delete-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/* ********************************************************************************************
+    Card
+*********************************************************************************************** */
+
+.common-box {
+  border: 1px solid #eee;
+  box-shadow: none;
+  .card-body {
+    padding: 1.125rem 1.25rem;
+  }
+  .table {
+      td, th {
+      border-top: 1px solid #e5e8ec;
+      vertical-align: middle;
+    }
+    td:first-child {
+      padding-left: 0px;
+    }
+    td:last-child {
+      padding-right: 0px;
+    }
+  }
+}
+.card-footer {
+  padding: 1rem 1.25rem;
+  background-color: #ffffff !important;
+}
+
+/* ********************************************************************************************
+    Banner & Email Template Box
+*********************************************************************************************** */
+
+.banner-box {
+  position: relative;
+  border: 1px solid #ced4db;
+  border-radius: 8px;
+  img {
+    min-height: 180px;
+    max-height: 180px;
+    margin: 0 auto;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px 8px 0px 0px;
+  }
+  .banner-upload-icon,
+  .banner-remove-icon {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 13px;
+    color: #ffffff !important;
+    cursor: pointer;
+    i {
+      cursor: pointer;
+    }
+  }
+  .banner-remove-icon {
+    left: auto;
+    right: 10px;
+  }
+}
+.email-template-box-custom {
+  border: 1px solid #ced4da;
+}
+.email-template-box:not(:last-child) {
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ced4da;
+  &:last-child {
+    textarea {
+      margin-bottom: 0px !important;
+    }
+  }
+}
+.email-template-box:last-child {
+  textarea {
+    margin-bottom: 0px !important;
+  }
+}
+
+/* ********************************************************************************************
+    Share Buttons
+*********************************************************************************************** */
+
+.share-button .btn {
+  height: 36px;
+  width: 36px;
+  line-height: 34px;
+  border-radius: 100%;
+  color: #fff;
+  font-size: 15px;
+  padding: 0;
+}
+.facebook {
+  border: 1px solid #3b5999 !important;
+  background-color: #3b5999;
+  &:hover, &:focus {
+    background-color: #ffffff;
+    color: #3b5999;
+  } 
+}
+.whatsapp {
+  border: 1px solid #25D366 !important;
+  background-color: #25D366;
+  &:hover, &:focus {
+    background-color: #ffffff;
+    color: #25D366;
+  }
+}
+.twitter {
+  border: 1px solid #55acee !important;
+  background-color: #55acee;
+  &:hover, &:focus {
+    background-color: #ffffff;
+    color: #55acee;
+  }
+}
+.instagram {
+  border: 1px solid #e4405f !important;
+  background-color: #e4405f;
+  &:hover, &:focus {
+    background-color: #ffffff;
+    color: #e4405f;
+  }
+}
+
+/* ********************************************************************************************
+    Checkbox Container
+*********************************************************************************************** */
+
+.checkbox-container, .radio-container {
+  display: block;
+  position: relative;
+  padding-left: 26px;
+  color: rgba(21, 37, 73, 0.80);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: inherit;
+  margin-bottom: 0px;
+}
+.checkbox-container input, .radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkbox-container input:checked ~ .checkmark, .radio-container input:checked ~ .checkmark {
+  background-color: #f12732;
+  border: 2px solid #f12732;
+}
+.checkbox-container input:checked ~ .checkmark::after, .radio-container input:checked ~ .checkmark::after {
+  display: block;
+}
+.checkbox-container .checkmark, .radio-container .checkmark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 2px solid #b8b7b7;
+}
+.radio-container .checkmark {
+  border-radius: 100%;
+}
+.checkbox-container .checkmark::after, .radio-container .checkmark::after  {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 4px;
+  top: 0px;
+  width: 6px;
+  height: 11px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* ********************************************************************************************
+    Pagination
+*********************************************************************************************** */
+
+.pagination {
+  display: flex;
+  -ms-flex-pack: center!important;
+  justify-content: center!important;
+  margin-top: 30px;
+  .page-link, a {
+      position: relative;
+      display: block;
+      padding: .5rem .75rem;
+      margin-left: -1px;
+      line-height: 1.25;
+      color: #212529;
+      background-color: #fff;
+      border: 1px solid #dee2e6;
+    
+      &:hover {
+          z-index: 2;
+          color: #f12732;
+          text-decoration: none;
+          background-color: #e9ecef;
+          border-color: #dee2e6;
+      }
+    
+      &:focus {
+          z-index: 2;
+          color: #f12732;
+          text-decoration: none;
+          background-color: #e9ecef;
+          border-color: #dee2e6;
+      }
+    
+      // Opinionated: add "hand" cursor to non-disabled .page-link elements
+      &:not(:disabled):not(.disabled) {
+        cursor: pointer;
+      }
+    }
+    
+    .page-item {
+      &:first-child {
+        .page-link, a {
+          margin-left: 0;
+          border-top-left-radius: .25rem;
+          border-bottom-left-radius: .25rem;
+        }
+      }
+      &:last-child {
+        .page-link, a {
+          border-top-right-radius: .25rem;
+          border-bottom-right-radius: .25rem;
+        }
+      }
+    
+      &.active .page-link, &.active a  {
+      z-index: 1;
+      color: #fff;
+      background-color: #f12732;
+      border-color: #f12732;
+      }
+    
+      &.disabled .page-link, &.disabled a {
+          color: #6c757d;
+          pointer-events: none;
+          cursor: auto;
+          background-color: #fff;
+          border-color: #dee2e6;
+      }
+    }
+    .previous.page-link,
+    .next.page-link  {
+      padding: 0;
+      border: none;
+    }
+}
+
+/* ********************************************************************************************
+    Others
+*********************************************************************************************** */
+
+.cross-border {
+  position: relative;
+  &::after {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: -2px;
+    content: "/";
+    color: #6c757d!important;
+  }
+}
+.toplist-table .table td,
+.toplist-table .table th {
+  padding: 1.25rem .75rem;
+}
+.design-editor-card {
+  margin-bottom: 1rem;
+  .card-header:first-child {
+    border-radius: 8px;
+    padding: 1.125rem 1.25rem;
+    cursor: pointer;
+  }
+  &:last-child {
+    margin-bottom: 0rem;
+  }
+}
+.input-group .input-group-append .btn {
+  z-index: 0;
+}
+.form-group-material .react-select-container {
+  .react-select__indicator-separator {
+    display: none;
+  }
+  .react-select__placeholder {
+    color: #495057 !important;
+  }
+  .react-select__multi-value__remove {
+    background-color: transparent;
+    color: #fff;
+  }
+  .react-select__indicator {
+    color: #a9a9a9 !important;
+  }
+  .react-select__value-container {
+    margin-top: 18px;
+    &.react-select__value-container--has-value {
+      margin-top: 28px;  
+    }
+  }
+}
+
+/* ********************************************************************************************
+    Affiliate Manager
+*********************************************************************************************** */
+
+.market-place-box{
+  img {
+     object-fit: cover;
+     border-radius: 100%;
+     border: 1px solid #dee2e6;
+ }
+ &.viewBox{
+   margin-top: -75px;
+ }
+}
+.market-place-icon {
+ position: absolute;
+ top: 15px;
+ right: 20px;
+}
+
+.cover-image{
+ img{
+   width: 100%;
+   height: 250px;
+   object-fit: contain;
+ }
+}
+.cover-image-market-place {
+ img{
+   height: 275px;
+ }
+ .cover-image-box {
+   position: absolute;
+   bottom: 0px;
+   left: 0px;
+   width: 100%;
+   background-color: rgba(0, 0, 0, 0.50);
+   padding: 16px 25px;
+   color: $white;
+   max-width: 45%;
+ }
+}
+
+.market-place {
+ img {
+   height: 250px;
+   width: 100%;
+   object-fit: cover;
+ }
+ .btn {
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 20px;
+   width: 100%;
+   max-width: 80%;
+   margin: 0 auto;
+ }
+}
+.market-place-product-images .card {
+ min-height: 210px;
+}

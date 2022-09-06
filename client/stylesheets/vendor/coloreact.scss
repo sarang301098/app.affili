@@ -1,0 +1,83 @@
+.color-input-wrap {
+  position: relative;
+
+  .color-picker-wrap {
+    position: absolute;
+    z-index: 3;
+    bottom: 38px;
+    width: 100%;
+    background: #fff;
+
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: 3;
+      bottom: -5px;
+      left: 50%;
+      margin-left: -6px;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #fff;
+    }
+
+    &.bottom {
+      bottom: auto;
+      top: 38px;
+
+      &:after {
+        border-top: none;
+        border-bottom: 6px solid #fff;
+        bottom: auto;
+        top: -5px;
+      }
+    }
+  }
+
+  .chrome-picker {
+    max-width: 100% !important;
+  }
+
+  .color-picker-buttons {
+    padding: 5px 5px 2.5px;
+    position: relative;
+    z-index: 2;
+
+    .btn {
+      background-color: #fff;
+      padding: 0;
+      height: 14px;
+      border: 1px solid #eee;
+      display: block;
+      width: 100%;
+      margin-right: 5px;
+
+      &:last-child {
+        margin-right: -2px;
+        width: 15px;
+        border: none;
+        font-size: 16px;
+        line-height: 1;
+      }
+    }
+  }
+
+  .ColorPicker {
+    position: relative;
+    height: 120px;
+
+    .Map {
+      left: 5px !important;
+      top: 5px !important;
+      right: 20px !important;
+      bottom: 5px !important;
+    }
+
+    .HueSlider {
+      right: 5px !important;
+      top: 5px !important;
+      bottom: 10px !important;
+    }
+  }
+}

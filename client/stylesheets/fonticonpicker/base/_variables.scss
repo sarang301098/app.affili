@@ -1,0 +1,30 @@
+$scheme: #f5f5f5 !default;
+$bg: #fff !default;
+
+$text: #777 !default;
+$icon-text: #777 !default;
+
+$color-background: $bg !default;
+
+$elem-border-color: $scheme !default;
+$elem-border-focus-color: $scheme !default;
+
+$pager-bg-color: $scheme !default;
+$pager-bg-hover-color: $scheme !default;
+
+$ibox-bg-color: $scheme !default;
+$ibox-bg-selected-color: $scheme !default;
+$ibox-bg-hover-color: $scheme !default;
+
+$btn-bg-color: $bg !default;
+$btn-bg-dd-color: $scheme !default;
+$btn-border-color: $scheme !default;
+$btn-bg-hover-color: $scheme !default;
+$btn-bg-active-color: #fff !default;
+
+$icon-border-color: $scheme !default;
+$empty-icon-color: $scheme !default;
+$error-icon-color: palette(Red, 200) !default;
+
+$del-bg-color: $scheme !default;
+$del-bg-hover-color: $scheme !default;
